@@ -113,6 +113,7 @@ public class Login extends JFrame {
 				// FUNCION CANCEL
 
 				Login.this.dispose();
+				padre.setVisible(true);
 
 			}
 		});

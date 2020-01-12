@@ -109,7 +109,7 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 						}
 					}
 					BusquedaClientePizzasyNumVeces.this.dispose();
-					VisualizacionCliente nueva = new VisualizacionCliente(dni, contenido, papi);
+					VisualizacionCliente nueva = new VisualizacionCliente(dni, contenido, papi,1);
 					nueva.setVisible(true);
 
 				} catch (UsuarioNoExiste e) {

@@ -63,6 +63,8 @@ public class PantallaInicial extends JFrame {
 	public PantallaInicial() {
 		setResizable(false);
 		CreateBD mydb = new CreateBD("Pizzeria.db");
+		CreateBD bd=new CreateBD("PizzeriaPrueba.db");
+		bd.createNewDatabase("PizzeriaPrueba.db");
 		mydb.createLink();
 		mydb.inicializarBD();
 
