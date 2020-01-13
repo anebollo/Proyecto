@@ -10,15 +10,14 @@ import logica.datos.CreateBD;
 
 public class CreateBDTest {
 	
-	private CreateBD ane;
+	private CreateBD database;
 
 	@Before
 	public void setUp() throws Exception {
 		
-		ane=new CreateBD("ANE.bd");
-		ane.createNewDatabase("ANE.bd");
-		ane.createLink();
-		//CREAR LINK
+		database=new CreateBD("PizzeriaTest.bd");
+		database.createNewDatabase("PizzeriaPrueba.bd");
+		database.createLink();
 		//INICIALIZAR
 	}
 
@@ -31,7 +30,7 @@ public class CreateBDTest {
 	
 	@After
 	public void tearDown() throws Exception {
-		ane.closeLink();
+		database.closeLink();
 	}
 	
 

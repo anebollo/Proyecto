@@ -20,7 +20,7 @@ public class FacturaBDTest {
 	@Before
 	public void setUp() throws Exception {
 
-		bd = new CreateBD("Pizzeria.db");
+		bd = new CreateBD("PizzeriaPrueba.bd");
 		bd.createLink();
 	}
 

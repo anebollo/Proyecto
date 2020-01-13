@@ -20,7 +20,8 @@ public class ClienteBDTest {
 	@Before
 	public void setUp() throws Exception {
 
-		bd = new CreateBD("Pizzeria.db");
+		bd = new CreateBD("PizzeriaPrueba.db");
+		//bd.createNewDatabase("PizzeriaPrueba.db");
 		bd.createLink();
 	}
 
