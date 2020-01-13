@@ -43,10 +43,11 @@ public class PizzaMasVendida extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblPizzaMasVendida = new JLabel("PIZZA MAS VENDIDA");
-		lblPizzaMasVendida.setFont(new Font("Tahoma", Font.PLAIN, 38));
+		JLabel lblPizzaMasVendida = new JLabel("PIZZA MAS PEDIDA\r\n");
+		lblPizzaMasVendida.setBackground(Color.WHITE);
+		lblPizzaMasVendida.setFont(new Font("Tahoma", Font.BOLD, 38));
 		lblPizzaMasVendida.setForeground(Color.BLACK);
-		lblPizzaMasVendida.setBounds(117, 36, 367, 52);
+		lblPizzaMasVendida.setBounds(94, 32, 435, 52);
 		contentPane.add(lblPizzaMasVendida);
 
 		JTextPane textPane = new JTextPane();

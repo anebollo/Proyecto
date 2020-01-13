@@ -4,6 +4,7 @@ import java.sql.Statement;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import logica.negocios.Administrador;
 import logica.negocios.Cliente;
@@ -95,9 +96,9 @@ public class ClienteBD {
 			}
 			pstmt.setString(1, DNI);
 			pstmt.setString(2, telefono);
-			pstmt.setNString(3, pizzas);
+			pstmt.setString(3, pizzas);
 			pstmt.setString(4, contadorVeces);
-			pstmt.executeUpdate();
+			pstmt.execute();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
@@ -122,21 +123,23 @@ public class ClienteBD {
 				String tlf = rs.getString("telefono");
 
 				// COMO LEER LOS STRING CON , DE LAS PIZZAS Y VECES
-				String[] pizzas = rs.getString("nombrePizzas").split(",");
-				ArrayList<String> listaPizzas = new ArrayList<String>(Arrays.asList(pizzas));
+				
+				ArrayList<String> listaPizzas = new ArrayList<String>();
+				Collections.addAll(listaPizzas, rs.getString("nombrePizzas").split("\\s*,\\s*"));
 
 				// COMO LEER LOS STRING CON , DE LAS PIZZAS Y VECES
-				String[] veces = rs.getString("numVeces").split(",");
-				ArrayList<Integer> listaVeces = new ArrayList<Integer>();
+				ArrayList<String> listaVeces = new ArrayList<String>();
+				ArrayList<Integer> vecesInt = new ArrayList<Integer>();
+				Collections.addAll(listaVeces, rs.getString("numVeces").split("\\s*,\\s*"));
 
-				for (int i = 0; i < veces.length; i++) {
-					String recogido = veces[i];
+				for (int i = 0; i < listaVeces.size(); i++) {
+					String recogido = listaVeces.get(i);
 					int vez = Integer.parseInt(recogido);
-					listaVeces.add(vez);
+					vecesInt.add(vez);
 
 				}
 
-				Cliente seleccionado = new Cliente(dni, tlf, listaPizzas, listaVeces);
+				Cliente seleccionado = new Cliente(dni, tlf, listaPizzas, vecesInt);
 				lista.add(seleccionado);
 
 			}

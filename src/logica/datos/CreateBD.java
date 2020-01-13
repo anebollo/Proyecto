@@ -64,17 +64,17 @@ public class CreateBD {
 			ArrayList<Integer> numVeces = new ArrayList<Integer>();
 			numVeces.add(2);
 			numVeces.add(3);
-			ClienteBD.insertCliente(this.conn,"943429440", "12345679A", pizzas, numVeces);
+			ClienteBD.insertCliente(this.conn,"12345679A","943429440", pizzas, numVeces);
 
 			ArrayList<String> pizzas1 = new ArrayList<String>();
-			pizzas.add("Jamon y queso");
-			pizzas.add("Barbacoa");
-			pizzas.add("Carbonara");
+			pizzas1.add("Jamon y queso");
+			pizzas1.add("Barbacoa");
+			pizzas1.add("Carbonara");
 			ArrayList<Integer> numVeces1 = new ArrayList<Integer>();
-			numVeces.add(1);
-			numVeces.add(3);
-			numVeces.add(2);
-			ClienteBD.insertCliente(this.conn,"674782688", "31425345G", pizzas1, numVeces1);
+			numVeces1.add(1);
+			numVeces1.add(3);
+			numVeces1.add(2);
+			ClienteBD.insertCliente(this.conn,"31425345G","674782688", pizzas1, numVeces1);
 
 			// insertar datos en la tabla administrador
 			AdministradorBD.insertAdministrador(this.conn,"73036696N", 3000, 7, "anebo", "deusto9");

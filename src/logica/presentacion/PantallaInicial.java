@@ -63,8 +63,8 @@ public class PantallaInicial extends JFrame {
 	public PantallaInicial() {
 		setResizable(false);
 		CreateBD mydb = new CreateBD("Pizzeria.db");
-		//CreateBD bd=new CreateBD("PizzeriaPrueba.db");
-		//bd.createNewDatabase("PizzeriaPrueba.db");
+		// CreateBD bd=new CreateBD("PizzeriaPrueba.db");
+		// bd.createNewDatabase("PizzeriaPrueba.db");
 		mydb.createLink();
 		mydb.inicializarBD();
 
@@ -72,7 +72,6 @@ public class PantallaInicial extends JFrame {
 		facturas = logica.datos.FacturaBD.selectAllFactura(mydb.getConn());
 		repartidores = logica.datos.RepartidorBD.selectAllRepartidor(mydb.getConn());
 		clientes = logica.datos.ClienteBD.selectAllCliente(mydb.getConn());
-		
 
 		mydb.closeLink();
 
@@ -90,7 +89,7 @@ public class PantallaInicial extends JFrame {
 
 				// ABRIR VENTANA LOGIN
 
-				Login login = new Login(clientes, facturas, admi, repartidores,PantallaInicial.this);
+				Login login = new Login(clientes, facturas, admi, repartidores, PantallaInicial.this);
 				login.setVisible(true);
 				PantallaInicial.this.dispose();
 
@@ -105,7 +104,7 @@ public class PantallaInicial extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				// ABRIR VENTANA CLIENTE
-				MenuCliente menuCliente = new MenuCliente(clientes,PantallaInicial.this);
+				MenuCliente menuCliente = new MenuCliente(clientes, PantallaInicial.this);
 				menuCliente.setVisible(true);
 				PantallaInicial.this.dispose();
 
