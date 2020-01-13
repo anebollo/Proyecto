@@ -63,15 +63,16 @@ public class PantallaInicial extends JFrame {
 	public PantallaInicial() {
 		setResizable(false);
 		CreateBD mydb = new CreateBD("Pizzeria.db");
-		CreateBD bd=new CreateBD("PizzeriaPrueba.db");
-		bd.createNewDatabase("PizzeriaPrueba.db");
+		//CreateBD bd=new CreateBD("PizzeriaPrueba.db");
+		//bd.createNewDatabase("PizzeriaPrueba.db");
 		mydb.createLink();
 		mydb.inicializarBD();
 
-		clientes = logica.datos.ClienteBD.selectAllCliente(mydb.getConn());
 		admi = logica.datos.AdministradorBD.selectAllAdministrador(mydb.getConn());
 		facturas = logica.datos.FacturaBD.selectAllFactura(mydb.getConn());
 		repartidores = logica.datos.RepartidorBD.selectAllRepartidor(mydb.getConn());
+		clientes = logica.datos.ClienteBD.selectAllCliente(mydb.getConn());
+		
 
 		mydb.closeLink();
 

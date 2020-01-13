@@ -6,6 +6,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import logica.negocios.Administrador;
+import logica.negocios.Factura;
+import logica.negocios.Repartidor;
+
 /**
  * Es el gestor de la base de datos
  * 
@@ -81,6 +85,7 @@ public class CreateBD {
 
 //			// insertar datos en la tabla repartidor
 			
+			
 			RepartidorBD.insertRepartidor(this.conn,"73036678F", 2000, 9, "07-03-2020");
 			RepartidorBD.insertRepartidor(this.conn,"73035485K", 1000, 4, "07-09-2020");
 			RepartidorBD.insertRepartidor(this.conn,"73554333F", 2000, 9, "07-09-2029");
@@ -96,9 +101,10 @@ public class CreateBD {
 			pizzas3.add("Jamon y queso");
 			pizzas3.add("Barbacoa");
 			FacturaBD.insertFactura(this.conn,2, "07-11-2019", 15, pizzas3);
-
+			
+		
 //			// Last step - Close connection
-			this.closeLink();
+			//this.closeLink();
 
 		} catch (SQLException e) {
 			

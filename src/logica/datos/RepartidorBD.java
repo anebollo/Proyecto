@@ -137,7 +137,7 @@ public class RepartidorBD {
 	 *            es la fecha de caducidad del carnet de conducir del repartidor
 	 */
 	public static void updateRepartidor(Connection conn,String DNI, int sueldo, int horasDia, String cadCarne){
-		String sql = "UPDATE repartidor SET sueldo = ? , horasDia = ? , cadCarne= ? WHERE id = ?";
+		String sql = "UPDATE repartidor SET sueldo = ? , horasDia = ? , cadCarne= ? WHERE DNI = ?";
 
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -164,7 +164,7 @@ public class RepartidorBD {
 	 */
 
 	public static void delete(Connection conn,String dni) {
-		String sql = "DELETE FROM repartidor WHERE dni = ?";
+		String sql = "DELETE FROM repartidor WHERE DNI = ?";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 

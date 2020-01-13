@@ -11,6 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 
 import logica.negocios.Administrador;
@@ -28,17 +29,16 @@ public class FacturaBD {
 
 	/**
 	 * Este metodo crea la tabla de las facturas
-	 * @param conn es la conexion de la base de datos
+	 * 
+	 * @param conn
+	 *            es la conexion de la base de datos
 	 */
-	public static void createFacturaTable(Connection conn)  {
+	public static void createFacturaTable(Connection conn) {
 		;
 
 		// SQL statement for creating a new table
-		String sql = "CREATE TABLE IF NOT EXISTS factura (\n"
-				+ "    numFac integer PRIMARY KEY,\n"
-				+ "    fecha text NOT NULL,\n" 
-				+ "    coste integer NOT NULL,\n" 
-				+ "    nombrePizzas text NOT NULL,\n"
+		String sql = "CREATE TABLE IF NOT EXISTS factura (\n" + "    numFac integer PRIMARY KEY,\n"
+				+ "    fecha text NOT NULL,\n" + "    coste integer NOT NULL,\n" + "    nombrePizzas text NOT NULL \n"
 				+ ");";
 
 		try (Statement stmt = conn.createStatement()) {
@@ -52,8 +52,9 @@ public class FacturaBD {
 	/**
 	 * Es para insertar los datos de las facturas
 	 * 
-	 * @param conn es la conexion de la base de datos
-	 *  
+	 * @param conn
+	 *            es la conexion de la base de datos
+	 * 
 	 * @param numFac
 	 *            el numero de la factura que sirve para identificarla
 	 * @param fecha
@@ -63,18 +64,20 @@ public class FacturaBD {
 	 * @param pizzas
 	 *            es el nombre de las pizzas compradas
 	 */
-	public static void insertFactura(Connection conn,int numFac, String fecha, int coste, ArrayList<String> pizzas) {
-		String sql = "INSERT INTO factura(numFac,fecha,coste,pizzas) VALUES(?,?,?,?)";
-		String nombrePizzas = null;
+	public static void insertFactura(Connection conn, int numFac, String fecha, int coste, ArrayList<String> pizzas) {
+		String sql = "INSERT INTO factura(numFac,fecha,coste,nombrePizzas) VALUES(?,?,?,?)";
+		String nombrePizzas = "";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
 			for (int i = 0; i < pizzas.size(); i++) {
-				
-				if(i==pizzas.size()-1) {
-					nombrePizzas+=pizzas.get(i);
+
+				if (i == pizzas.size() - 1) {
+					nombrePizzas += pizzas.get(i);
+				} else if(i<pizzas.size()-1) {
+					nombrePizzas += pizzas.get(i) + ",";
+
 				}
-				nombrePizzas+=pizzas.get(i)+",";
 
 			}
 
@@ -91,20 +94,20 @@ public class FacturaBD {
 	/**
 	 * selecciona todas las facturas
 	 * 
-	 * @param conn es la conexion de la base de datos
+	 * @param conn
+	 *            es la conexion de la base de datos
 	 * 
 	 * @return devuelve las facturas de la base de datos en un array list
 	 */
 	public static ArrayList<Factura> selectAllFactura(Connection conn) {
-		String sql = "SELECT numFac, fecha, coste, pizzas FROM factura";
+		String sql = "SELECT numFac, fecha, coste, nombrePizzas FROM factura";
 		ArrayList<Factura> lista = new ArrayList<Factura>();
 		String fecha = null;
 		int numfac = 0;
 		int coste = 0;
 		ArrayList<String> listaPizzas = new ArrayList<String>();
 
-		try (Statement stmt = conn.createStatement();
-				ResultSet rs = stmt.executeQuery(sql)) {
+		try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
 
 			// loop through the result set
 			while (rs.next()) {
@@ -114,23 +117,23 @@ public class FacturaBD {
 				coste = rs.getInt("coste");
 
 				// COMO LEER LOS STRING CON , DE LAS PIZZAS Y VECES
-				String[] pizzas = rs.getString("pizzas").split(",");
-				listaPizzas = (ArrayList<String>) Arrays.asList(pizzas);
+				Collections.addAll(listaPizzas, rs.getString("nombrePizzas").split("\\s*,\\s*"));
+
+				Date fechaFac = null;
+				try {
+					fechaFac = (Date) new SimpleDateFormat("dd-MM-yyyy").parse(fecha);
+
+				} catch (ParseException e) {
+
+					e.printStackTrace();
+				}
+
+				// pasar a arraylist
+
+				Factura seleccionada = new Factura(numfac, fechaFac, coste, listaPizzas);
+				lista.add(seleccionada);
+
 			}
-
-			Date fechaFac = null;
-			try {
-				fechaFac = (Date) new SimpleDateFormat("dd-MM-yyyy").parse(fecha);
-
-			} catch (ParseException e) {
-
-				e.printStackTrace();
-			}
-
-			// pasar a arraylist
-
-			Factura seleccionada = new Factura(numfac, fechaFac, coste, listaPizzas);
-			lista.add(seleccionada);
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -139,4 +142,19 @@ public class FacturaBD {
 		return lista;
 	}
 
+	public static void delete(Connection conn, int numFac) {
+		String sql = "DELETE FROM factura WHERE numFac = ?";
+
+		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+			// set the corresponding param
+			pstmt.setInt(1, numFac);
+
+			// execute the delete statement
+			pstmt.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }

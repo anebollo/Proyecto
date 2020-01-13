@@ -116,6 +116,7 @@ public class MenuAdmi extends JFrame {
 					int opcion1 = 1;
 					NuevoRepartidor ventana = new NuevoRepartidor(MenuAdmi.this, opcion1);
 					ventana.setVisible(true);
+					MenuAdmi.this.dispose();
 
 				} else if (opcion.equals("Dar de baja Repartidor")) {
 
@@ -146,6 +147,7 @@ public class MenuAdmi extends JFrame {
 						NuevoRepartidor ventana = new NuevoRepartidor(MenuAdmi.this, dni, sueldo, horasDia, fechaCad,
 								opcion1);
 						ventana.setVisible(true);
+						MenuAdmi.this.dispose();
 
 					}
 
@@ -174,6 +176,7 @@ public class MenuAdmi extends JFrame {
 					
 					InfoRepartidores abrir=new InfoRepartidores(repartidoresBD, MenuAdmi.this);
 					abrir.setVisible(true);
+					MenuAdmi.this.dispose();
 
 				} else if (opcion.equals("Repartidores que se les caduca el carnet EN 3 meses de una fecha ")) {
 					

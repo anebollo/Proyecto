@@ -107,4 +107,6 @@ public class AdministradorBD {
 		return lista;
 	}
 
+	
+	
 }

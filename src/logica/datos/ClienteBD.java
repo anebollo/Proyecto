@@ -66,9 +66,9 @@ public class ClienteBD {
 	 */
 	public static void insertCliente(Connection conn, String DNI, String telefono, ArrayList<String> nombrePizzas,
 			ArrayList<Integer> numVeces) {
-		String sql = "INSERT INTO cliente(DNI,telefono,pizzas,contadorVeces) VALUES(?,?,?,?)";
-		String pizzas = null;
-		String contadorVeces = null;
+		String sql = "INSERT INTO cliente(DNI,telefono,nombrePizzas,numVeces) VALUES(?,?,?,?)";
+		String pizzas = "";
+		String contadorVeces = "";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
@@ -77,17 +77,20 @@ public class ClienteBD {
 				if (i == nombrePizzas.size() - 1) {
 					pizzas += nombrePizzas.get(i);
 				}
+				else if(i<nombrePizzas.size()-1) {
 				pizzas += nombrePizzas.get(i) + ",";
+				}
 
 			}
 
 			for (int i = 0; i < numVeces.size(); i++) {
 
-				if (i == numVeces.get(i) - 1) {
+				if (i == numVeces.size() - 1) {
 					contadorVeces += numVeces.get(i);
 				}
-
+				else if(i<numVeces.size()-1){
 				contadorVeces += numVeces.get(i) + ",";
+				}
 
 			}
 			pstmt.setString(1, DNI);
@@ -153,7 +156,7 @@ public class ClienteBD {
 	 *            es el dni del cliente
 	 */
 	public static void delete(Connection conn, String dni) {
-		String sql = "DELETE FROM cliente WHERE dni = ?";
+		String sql = "DELETE FROM cliente WHERE DNI = ?";
 
 		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
