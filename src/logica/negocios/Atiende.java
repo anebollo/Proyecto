@@ -58,8 +58,9 @@ public class Atiende extends Empleado implements ICalculator<Atiende> {
 
 	@Override
 	public ArrayList<Integer> calcular(ArrayList<Atiende>t) {
-		return null;
-		
+		CalculatorGenerico solicitado=new CalculatorGenerico();
+		ArrayList<Integer> totalAtiende=solicitado.calcular(t);
+		return totalAtiende;
 	}
 
 }

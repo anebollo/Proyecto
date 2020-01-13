@@ -79,8 +79,9 @@ public class Cocinero extends Empleado implements ICalculator<Cocinero>{
 
 	@Override
 	public ArrayList<Integer> calcular(ArrayList<Cocinero>t) {
-		return null;
-		
+		CalculatorGenerico solicitado=new CalculatorGenerico();
+		ArrayList<Integer> totalCocineros=solicitado.calcular(t);
+		return totalCocineros;
 	}
 
 }

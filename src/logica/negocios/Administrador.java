@@ -86,7 +86,10 @@ public class Administrador extends Empleado implements ICalculator<Administrador
 
 	@Override
 	public ArrayList<Integer> calcular(ArrayList<Administrador> t) {
-		return null;
+		
+		CalculatorGenerico solicitado=new CalculatorGenerico();
+		ArrayList<Integer> totalAdmins=solicitado.calcular(t);
+		return totalAdmins;
 		
 	}
 
