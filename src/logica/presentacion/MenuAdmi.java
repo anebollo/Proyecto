@@ -159,8 +159,8 @@ public class MenuAdmi extends JFrame {
 
 				} else if (opcion.equals("Pizza mas pedida")) {
 					
-					//PizzaMasVendida abrir=new PizzaMasVendida(clientesBD,MenuAdmi.this);
-					//abrir.setVisible(true);
+					PizzaMasVendida abrir=new PizzaMasVendida(clientesBD,MenuAdmi.this);
+					abrir.setVisible(true);
 					MenuAdmi.this.dispose();
 
 				} else if (opcion.equals("Buscar facturas por fecha determinada")) {
@@ -190,8 +190,8 @@ public class MenuAdmi extends JFrame {
 				} else if (opcion.equals("Cual es el mes que mas gana la pizzeria")) {
 
 					
-					//VisualizacionMasGana abrir=new VisualizacionMasGana(MenuAdmi.this,facturasBD);
-					//abrir.setVisible(true);
+					VisualizacionMasGana abrir=new VisualizacionMasGana(MenuAdmi.this,facturasBD);
+					abrir.setVisible(true);
 					MenuAdmi.this.dispose();
 
 				}
