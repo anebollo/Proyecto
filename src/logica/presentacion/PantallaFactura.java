@@ -251,6 +251,49 @@ public class PantallaFactura extends JFrame {
 	 * cliente
 	 */
 	public static void desglosar() {
+		countJQ = (int) compraCliente.stream().filter(w -> w.getNombre().equals("Jamon y queso")).count();
+		count4Q = (int) compraCliente.stream().filter(w -> w.getNombre().equals("4 quesos")).count();
+		countB = (int) compraCliente.stream().filter(w -> w.getNombre().equals("Barbacoa")).count();
+		countC = (int) compraCliente.stream().filter(w -> w.getNombre().equals("Carbonara")).count();
+		countH = (int) compraCliente.stream().filter(w -> w.getNombre().equals("Hawaiiana")).count();
+		countBo = (int) compraCliente.stream().filter(w -> w.getNombre().equals("Boloñesa")).count();
+
+		// COMPROBAR QUE NINGUN COUNT SEA 0
+
+		if (countJQ != 0) {
+			nombrePizzas.add("Jamon y queso");
+			numVeces.add(countJQ);
+
+		}
+		if (count4Q != 0) {
+			nombrePizzas.add("4 quesos");
+			numVeces.add(count4Q);
+
+		}
+
+		if (countB != 0) {
+			nombrePizzas.add("Barbacoa");
+			numVeces.add(countB);
+
+		}
+
+		if (countC != 0) {
+			nombrePizzas.add("Carbonara");
+			numVeces.add(countC);
+
+		}
+
+		if (countH != 0) {
+			nombrePizzas.add("Hawaiiana");
+			numVeces.add(countH);
+
+		}
+
+		if (countBo != 0) {
+			nombrePizzas.add("Boloñesa");
+			numVeces.add(countBo);
+
+		}
 
 		
 
