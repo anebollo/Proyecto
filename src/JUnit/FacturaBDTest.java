@@ -15,7 +15,7 @@ import logica.negocios.Factura;
 
 public class FacturaBDTest {
 
-	private CreateBD bd = null;
+	private CreateBD bd;
 
 	@Before
 	public void setUp() throws Exception {

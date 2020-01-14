@@ -16,7 +16,7 @@ import logica.negocios.Repartidor;
 
 public class RepartidorBDTest {
 
-	private CreateBD bd = null;
+	private CreateBD bd;
 	
 	@Before
 	public void setUp() throws Exception {

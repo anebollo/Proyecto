@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.omg.Messaging.SyncScopeHelper;
 
 import junit.framework.Assert;
 import logica.datos.CreateBD;
@@ -15,13 +16,13 @@ import logica.negocios.Cliente;
 
 public class ClienteBDTest {
 
-	private CreateBD bd = null;
+	private CreateBD bd;
 
 	@Before
 	public void setUp() throws Exception {
 
 		bd = new CreateBD("PizzeriaPrueba.db");
-		//bd.createNewDatabase("PizzeriaPrueba.db");
+		// bd.createNewDatabase("PizzeriaPrueba.db");
 		bd.createLink();
 	}
 
@@ -62,10 +63,10 @@ public class ClienteBDTest {
 
 				assertEquals(pizzaLeida.get(0), "Jamon y queso");
 				assertEquals(pizzaLeida.get(1), "4 quesos");
-				
-				int vez1=vecesLeida.get(0);
-				int vez2=vecesLeida.get(1);
-		
+
+				int vez1 = vecesLeida.get(0);
+				int vez2 = vecesLeida.get(1);
+
 				assertEquals(vez1, 2);
 				assertEquals(vez2, 1);
 
@@ -86,9 +87,9 @@ public class ClienteBDTest {
 
 				assertNotEquals(pizzaLeida.get(0), "4 quesos");
 				assertNotEquals(pizzaLeida.get(1), "Jamon y queso");
-				
-				int vez1=vecesLeida.get(0);
-				int vez2=vecesLeida.get(1);
+
+				int vez1 = vecesLeida.get(0);
+				int vez2 = vecesLeida.get(1);
 
 				assertNotEquals(vez1, 0);
 				assertNotEquals(vez2, 2);
@@ -121,9 +122,9 @@ public class ClienteBDTest {
 
 				assertEquals(pizzaLeida.get(0), "Jamon y queso");
 				assertEquals(pizzaLeida.get(1), "4 quesos");
-				
-				int vez1=vecesLeida.get(0);
-				int vez2=vecesLeida.get(1);
+
+				int vez1 = vecesLeida.get(0);
+				int vez2 = vecesLeida.get(1);
 
 				assertEquals(vez1, 2);
 				assertEquals(vez2, 1);
@@ -144,9 +145,9 @@ public class ClienteBDTest {
 
 				assertNotEquals(pizzaLeida.get(0), "4 quesos");
 				assertNotEquals(pizzaLeida.get(1), "Jamon y queso");
-				
-				int vez1=vecesLeida.get(0);
-				int vez2=vecesLeida.get(1);
+
+				int vez1 = vecesLeida.get(0);
+				int vez2 = vecesLeida.get(1);
 
 				assertNotEquals(vez1, 0);
 				assertNotEquals(vez2, 2);

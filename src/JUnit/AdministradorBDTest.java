@@ -2,6 +2,7 @@ package JUnit;
 
 import static org.junit.Assert.*;
 
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ import logica.negocios.Administrador;
 
 public class AdministradorBDTest {
 
-	private CreateBD bd = null;
+	private CreateBD bd;
 
 	@Before
 	public void setUp() throws Exception {
