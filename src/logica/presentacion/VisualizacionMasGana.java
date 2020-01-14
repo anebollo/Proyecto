@@ -33,6 +33,7 @@ public class VisualizacionMasGana extends JFrame {
 	 * Create the frame.
 	 */
 	public VisualizacionMasGana(MenuAdmi padre, ArrayList<Factura> listaFacturasBD) {
+		setResizable(false);
 
 		listaFacturas = listaFacturasBD;
 		atras=padre;

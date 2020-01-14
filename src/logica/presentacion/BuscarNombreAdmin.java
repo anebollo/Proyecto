@@ -31,6 +31,7 @@ public class BuscarNombreAdmin extends JFrame {
 	 * Create the frame.
 	 */
 	public BuscarNombreAdmin(MenuAdmi padre, ArrayList<Administrador>listaAdmin) {
+		setResizable(false);
 		
 		this.papi=padre;
 		this.listaAdministradores=listaAdmin;

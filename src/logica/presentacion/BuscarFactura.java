@@ -75,6 +75,7 @@ public class BuscarFactura extends JFrame {
 	 * @wbp.parser.constructor
 	 */
 	public BuscarFactura(ArrayList<Repartidor> repartidoresBD, String dato, MenuAdmi padre, int option) {
+		setResizable(false);
 		this.listaRepartidores = repartidoresBD;
 		this.padre = padre;
 		lblBusquedaFactura = new JLabel(dato);
@@ -84,10 +85,8 @@ public class BuscarFactura extends JFrame {
 	}
 
 	public void cargarVentana() {
-
-		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 645, 430);
+		setBounds(100, 100, 644, 427);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -157,8 +156,7 @@ public class BuscarFactura extends JFrame {
 						nuevo.setVisible(true);
 
 					} else {
-						UsuarioNoExiste e1 = null;
-						JOptionPane.showMessageDialog(BuscarFactura.this, e1.getMessage());
+						JOptionPane.showMessageDialog(BuscarFactura.this, "NO existe ninguna fecha asi");
 
 					}
 
@@ -190,8 +188,7 @@ public class BuscarFactura extends JFrame {
 		contentPane.add(btnSalir);
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\72864711-hombre-de-negocios-confundido-factura-plana-color-ilustraci\u00F3n-de-dibujos-animados.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/BuscarFactura.jpg"));
 		lblNewLabel.setBounds(0, 0, 656, 401);
 		contentPane.add(lblNewLabel);
 	}

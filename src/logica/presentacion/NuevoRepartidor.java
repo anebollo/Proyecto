@@ -268,7 +268,7 @@ public class NuevoRepartidor extends JFrame {
 		contentPane.add(btnCancel);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\dibujos-animados-repartidor-pizza-montando-moto_29190-4421.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/nuevoReparrtidor.jpg"));
 		lblNewLabel.setBounds(0, -22, 615, 448);
 		contentPane.add(lblNewLabel);
 	}

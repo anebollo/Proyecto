@@ -57,10 +57,6 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 		setResizable(false);
 
 		this.clientes = clientesS;
-		
-		for(int i=0;i<this.clientes.size();i++) {
-			System.out.println(clientes.get(i).getTelefono()+"\n");
-		}
 		this.papi=padre;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -128,8 +124,7 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\pizzeria-clientes-felices-ilustracion-dibujos-animados_82574-1812.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/numVecesPizza.jpg"));
 		lblNewLabel.setBounds(0, 57, 661, 344);
 		contentPane.add(lblNewLabel);
 		

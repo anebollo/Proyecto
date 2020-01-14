@@ -256,7 +256,7 @@ public class PantallaFactura extends JFrame {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\depositphotos_183174042-stock-illustration-letters-logo-initial-logo-identity.jpg"));
+				"imagenes/AA.jpg"));
 		lblNewLabel.setBounds(392, 44, 157, 125);
 		contentPane.add(lblNewLabel);
 

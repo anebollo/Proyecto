@@ -95,14 +95,11 @@ public class VisualizacionCliente extends JFrame {
 
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Tahoma", Font.BOLD, 19));
-		btnCancel.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-				// accion cancel
-				VisualizacionCliente.this.dispose();
-				padre.setVisible(true);
-			}
-		});
+		
+		//accion cancel
+		ClickListener cl=new ClickListener();
+		btnCancel.addActionListener(cl);
+		
 		btnCancel.setBounds(428, 312, 115, 29);
 		contentPane.add(btnCancel);
 
@@ -128,9 +125,18 @@ public class VisualizacionCliente extends JFrame {
 		contentPane.add(lblDni);
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\pizza-su-caja-vector_42788-52.jpg"));
-		lblNewLabel.setBounds(244, 0, 335, 260);
+		lblNewLabel.setIcon(new ImageIcon("imagenes/visualizacionClient.jpg"));
+		lblNewLabel.setBounds(10, 0, 569, 421);
 		contentPane.add(lblNewLabel);
+	}
+	
+	private class ClickListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent e) {
+			
+			VisualizacionCliente.this.dispose();
+			padre.setVisible(true);
+		}
+		
 	}
 }

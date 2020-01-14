@@ -58,6 +58,7 @@ public class VisualizacionFactura extends JFrame {
 	 * @wbp.parser.constructor
 	 */
 	public VisualizacionFactura(BuscarFactura padre,ArrayList<Repartidor> seleccionadoS,String fechaS) {
+		setResizable(false);
 		
 		//mOSTRAR numero de facturas de un repartidor concreto
 		opcion=padre.getOpcion();

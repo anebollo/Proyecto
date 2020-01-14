@@ -242,8 +242,7 @@ public class MenuAdmi extends JFrame {
 		contentPane.add(btnSalir);
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\software-3663509_1280-1280x856.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/menuadmin.jpg"));
 		lblNewLabel.setBounds(-235, -76, 1292, 678);
 		contentPane.add(lblNewLabel);
 

@@ -121,7 +121,7 @@ public class Login extends JFrame {
 		contentPane.add(btnCancel);
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\PC\\Pictures\\usuarios.png"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/usuarios.png"));
 		lblNewLabel.setBounds(427, -152, 894, 576);
 		contentPane.add(lblNewLabel);
 	}

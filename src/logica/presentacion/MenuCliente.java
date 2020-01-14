@@ -60,17 +60,17 @@ public class MenuCliente extends JFrame {
 		contentPane.add(lblJamonYQueso);
 
 		JLabel label1 = new JLabel("New label");
-		label1.setIcon(new ImageIcon("C:\\Users\\PC\\Pictures\\pizza_jamonyqueso_sinlactosa_730x470.jpg"));
+		label1.setIcon(new ImageIcon("imagenes/JAMONyqueso.jpg"));
 		label1.setBounds(15, 113, 149, 101);
 		contentPane.add(label1);
 
 		JLabel label2 = new JLabel("New label");
-		label2.setIcon(new ImageIcon("C:\\Users\\PC\\Pictures\\234-c.jpg"));
+		label2.setIcon(new ImageIcon("imagenes/4quesos.jpg"));
 		label2.setBounds(15, 230, 149, 99);
 		contentPane.add(label2);
 
 		JLabel label3 = new JLabel("New label");
-		label3.setIcon(new ImageIcon("C:\\Users\\PC\\Pictures\\images.jpg"));
+		label3.setIcon(new ImageIcon("imagenes/barbacoa.jpg"));
 		label3.setBounds(15, 345, 155, 99);
 		contentPane.add(label3);
 
@@ -84,20 +84,20 @@ public class MenuCliente extends JFrame {
 		lblBarbacoa.setBounds(185, 350, 108, 20);
 		contentPane.add(lblBarbacoa);
 
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\PC\\Pictures\\maxresdefault.jpg"));
-		lblNewLabel.setBounds(477, 110, 139, 106);
-		contentPane.add(lblNewLabel);
+		JLabel label4 = new JLabel("New label");
+		label4.setIcon(new ImageIcon("imagenes/carbonara.jpg"));
+		label4.setBounds(477, 110, 139, 106);
+		contentPane.add(label4);
 
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\PC\\Pictures\\Hawaiiana-965.jpg"));
-		lblNewLabel_1.setBounds(477, 235, 139, 89);
-		contentPane.add(lblNewLabel_1);
+		JLabel label5 = new JLabel("New label");
+		label5.setIcon(new ImageIcon("imagenes/Hawaiiana.jpg"));
+		label5.setBounds(477, 235, 139, 89);
+		contentPane.add(label5);
 
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\PC\\Pictures\\pizzabon.jpg"));
-		lblNewLabel_2.setBounds(463, 350, 153, 89);
-		contentPane.add(lblNewLabel_2);
+		JLabel label6 = new JLabel("New label");
+		label6.setIcon(new ImageIcon("imagenes/boloñesa.jpg"));
+		label6.setBounds(463, 350, 153, 89);
+		contentPane.add(label6);
 
 		JLabel lblCarbonara = new JLabel("CARBONARA");
 		lblCarbonara.setFont(new Font("Tahoma", Font.BOLD, 16));

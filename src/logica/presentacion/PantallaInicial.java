@@ -132,8 +132,7 @@ public class PantallaInicial extends JFrame {
 		contentPane.add(btnSalir);
 
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:\\Users\\PC\\Pictures\\as-pizzerias-no-decaen-modelo-franquicia-estable-rentable.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/PantallaIni.jpg"));
 		lblNewLabel.setBounds(-83, -165, 1344, 794);
 		contentPane.add(lblNewLabel);
 	}

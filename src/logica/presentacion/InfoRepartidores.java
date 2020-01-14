@@ -34,6 +34,7 @@ public class InfoRepartidores extends JFrame {
 	 * Create the frame.
 	 */
 	public InfoRepartidores(ArrayList<Repartidor>leido, MenuAdmi papi) {
+		setResizable(false);
 		
 		padre=papi;
 		
@@ -97,7 +98,7 @@ public class InfoRepartidores extends JFrame {
 		contentPane.add(btnSalir);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\repartidor-feliz-estilo-dibujo-mano_23-2147673144.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/infoRepartidor.jpg"));
 		lblNewLabel.setBounds(0, -52, 637, 591);
 		contentPane.add(lblNewLabel);
 		

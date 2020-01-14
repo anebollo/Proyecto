@@ -43,6 +43,7 @@ public class EnviarCorreo extends JFrame {
 	 * Create the frame.
 	 */
 	public EnviarCorreo(MenuAdmi padre, String user, String passW) {
+		setResizable(false);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 574, 483);
@@ -126,11 +127,6 @@ public class EnviarCorreo extends JFrame {
 		btnCancel.setBounds(42, 366, 115, 29);
 		contentPane.add(btnCancel);
 
-		JLabel lblFoto = new JLabel("New label");
-		lblFoto.setIcon(new ImageIcon("imagenes/correo.jpg"));
-		lblFoto.setBounds(-27, -35, 662, 540);
-		contentPane.add(lblFoto);
-
 		lblEmisor = new JLabel("Emisor");
 		lblEmisor.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblEmisor.setBounds(27, 118, 69, 20);
@@ -145,6 +141,11 @@ public class EnviarCorreo extends JFrame {
 		lblCuerpo.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblCuerpo.setBounds(27, 215, 69, 20);
 		contentPane.add(lblCuerpo);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("imagenes/correo.jpg"));
+		lblNewLabel.setBounds(-29, -30, 667, 526);
+		contentPane.add(lblNewLabel);
 	}
 
 	public static boolean enviarGmail(String user, String contra, String destinatario, String cuerpo) {

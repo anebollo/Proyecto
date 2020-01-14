@@ -48,21 +48,21 @@ public class ConfirmacionPedido extends JFrame {
 		lblEnBreveEmpezaremos.setBounds(38, 167, 432, 28);
 		contentPane.add(lblEnBreveEmpezaremos);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\depositphotos_124334428-stock-illustration-green-tick-check-mark-icon.jpg"));
-		lblNewLabel.setBounds(15, 16, 120, 95);
-		contentPane.add(lblNewLabel);
+		JLabel label_icono = new JLabel("New label");
+		label_icono.setVerticalAlignment(SwingConstants.TOP);
+		label_icono.setIcon(new ImageIcon("imagenes/tik.jpg"));
+		label_icono.setBounds(15, 16, 120, 95);
+		contentPane.add(label_icono);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\pasos.jpg"));
-		lblNewLabel_1.setBounds(28, 211, 411, 49);
-		contentPane.add(lblNewLabel_1);
+		JLabel label_barra = new JLabel("New label");
+		label_barra.setIcon(new ImageIcon("imagenes/pasos.jpg"));
+		label_barra.setBounds(28, 211, 411, 49);
+		contentPane.add(label_barra);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\telefono-perfiles.jpg"));
-		lblNewLabel_2.setBounds(358, 324, 52, 28);
-		contentPane.add(lblNewLabel_2);
+		JLabel label_Tel = new JLabel("New label");
+		label_Tel.setIcon(new ImageIcon("imagenes/tel.jpg"));
+		label_Tel.setBounds(358, 324, 52, 28);
+		contentPane.add(label_Tel);
 		
 		JLabel label = new JLabel("943 429 445");
 		label.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -70,14 +70,14 @@ public class ConfirmacionPedido extends JFrame {
 		label.setBounds(425, 324, 134, 28);
 		contentPane.add(label);
 		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\PC\\Desktop\\DEUSTO\\3.CURSO\\1.SEMESTRE\\Program III\\baker-amasando-masa-mostrador_13339-87243.jpg"));
-		lblNewLabel_3.setBounds(-25, -57, 699, 477);
-		contentPane.add(lblNewLabel_3);
+		JLabel label_Confir = new JLabel("New label");
+		label_Confir.setIcon(new ImageIcon("imagenes/confirmarPedido.jpg"));
+		label_Confir.setBounds(-25, -57, 699, 477);
+		contentPane.add(label_Confir);
 		
 		JLabel lblWwwpizzasaacom = new JLabel("www.PizzasAA.com");
 		lblWwwpizzasaacom.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblWwwpizzasaacom.setBounds(15, 328, 120, 24);
+		lblWwwpizzasaacom.setBounds(15, 328, 203, 24);
 		contentPane.add(lblWwwpizzasaacom);
 	}
 }
