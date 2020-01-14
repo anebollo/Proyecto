@@ -103,7 +103,7 @@ public class VisualizacionCliente extends JFrame {
 		btnCancel.setBounds(428, 312, 115, 29);
 		contentPane.add(btnCancel);
 
-		JLabel lblCliente = null;
+		JLabel lblCliente = new JLabel("ne");
 		if (opcion == 1) {
 			lblCliente = new JLabel("CLIENTE:");
 		} else if (opcion == 2) {
@@ -111,17 +111,18 @@ public class VisualizacionCliente extends JFrame {
 		}
 
 		lblCliente.setFont(new Font("Wide Latin", Font.BOLD, 18));
-		lblCliente.setBounds(55, 28, 195, 20);
+		lblCliente.setBounds(55, 28, 393, 20);
 		contentPane.add(lblCliente);
 
-		JLabel lblDni = null;
+		JLabel lblDni = new JLabel("aa");
+		lblDni.setFont(new Font("Tahoma", Font.BOLD, 16));
 		if (opcion == 1) {
 			lblDni = new JLabel(dniCliente);
 		} else if (opcion == 2) {
 			lblDni = new JLabel(dniAdmin);
 		}
 
-		lblDni.setBounds(244, 28, 150, 20);
+		lblDni.setBounds(413, 27, 150, 20);
 		contentPane.add(lblDni);
 
 		JLabel lblNewLabel = new JLabel("New label");

@@ -12,12 +12,20 @@ import org.junit.Test;
 
 import logica.datos.CreateBD;
 import logica.negocios.Factura;
-
+/**
+ * esta es la clase donde se teste todo lo de la BD de las facturas
+ * @author Alumno
+ *
+ */
 public class FacturaBDTest {
 
 	private CreateBD bd;
 
 	@Before
+	/**
+	 * este es el metodo donde se inicializan los valores
+	 * @throws Exception
+	 */
 	public void setUp() throws Exception {
 
 		bd = new CreateBD("PizzeriaPrueba.bd");
@@ -25,12 +33,20 @@ public class FacturaBDTest {
 	}
 
 	@After
+	/**
+	 * este es el metodo donde se cierra al conexion despues de testear
+	 * @throws Exception
+	 */
 	public void tearDown() throws Exception {
 		bd.closeLink();
 
 	}
 
 	@Test
+	/**
+	 * este es el metodo donde se testea si se ha creado o no la tabla
+	 * @throws SQLException
+	 */
 	public void testFail() throws SQLException {
 
 		logica.datos.AdministradorBD.insertAdministrador(bd.getConn(), "12345678G", 200, 5, "anetxu", "anebo9");
@@ -39,6 +55,9 @@ public class FacturaBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el metodo donde se testea el insert de facturas
+	 */
 	public void testInsert() {
 
 		logica.datos.FacturaBD.createFacturaTable(bd.getConn());
@@ -80,6 +99,9 @@ public class FacturaBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el metodo donde se testea el select de facturas
+	 */
 	public void select() {
 		
 

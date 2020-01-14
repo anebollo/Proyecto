@@ -14,11 +14,20 @@ import org.junit.Test;
 import logica.datos.CreateBD;
 import logica.negocios.Repartidor;
 
+/**
+ * este es la clase donde se testea todo lo de la BD de repartidores
+ * @author Alumno
+ *
+ */
 public class RepartidorBDTest {
 
 	private CreateBD bd;
 	
 	@Before
+	/**
+	 * este es el metodo dodne se inicializan los valores
+	 * @throws Exception
+	 */
 	public void setUp() throws Exception {
 		
 		bd = new CreateBD("PizzeriaPrueba.bd");
@@ -26,12 +35,20 @@ public class RepartidorBDTest {
 	}
 	
 	@After
+	/**
+	 * este es el metodo donde se cierra la conexion despues de testear
+	 * @throws Exception
+	 */
 	public void tearDown() throws Exception {
 		bd.closeLink();
 
 	}
 	
 	@Test
+	/**
+	 * este es el metodo donde se testea si se a creado o no la tabla
+	 * @throws SQLException
+	 */
 	public void testFail() throws SQLException {
 
 		logica.datos.AdministradorBD.insertAdministrador(bd.getConn(), "12345678G", 200, 5,"anetxu", "anebo9");
@@ -41,6 +58,10 @@ public class RepartidorBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el metodo donde se testea el insert
+	 * @throws SQLException
+	 */
 	public void testInsert() throws SQLException {
 		
 		logica.datos.RepartidorBD.createRepartidorTable(bd.getConn());
@@ -80,6 +101,10 @@ public class RepartidorBDTest {
 	}
 	
 	@Test
+	/**
+	 * este es el metodo donde se testea el select
+	 * @throws SQLException
+	 */
 	public void testSelect() throws SQLException {
 		
 		logica.datos.RepartidorBD.createRepartidorTable(bd.getConn());
@@ -119,6 +144,10 @@ public class RepartidorBDTest {
 	
 
 	@Test
+	/**
+	 * este es el metodo donde se testea el update
+	 * @throws SQLException
+	 */
 	public void testUpdate() throws SQLException {
 		
 		logica.datos.RepartidorBD.createRepartidorTable(bd.getConn());
@@ -148,6 +177,10 @@ public class RepartidorBDTest {
 	
 
 	@Test
+	/**
+	 * este es el metodo donde se testea el delete
+	 * @throws SQLException
+	 */
 	public void testDelete() throws SQLException {
 		
 

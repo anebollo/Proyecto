@@ -13,11 +13,20 @@ import org.junit.Test;
 import logica.datos.CreateBD;
 import logica.negocios.Administrador;
 
+/**
+ * esta clase es para testear todo lo de la base de datos del administrador
+ * @author Ane y Aitor
+ *
+ */
 public class AdministradorBDTest {
 
 	private CreateBD bd;
 
 	@Before
+	/**
+	 * este metodo es para inicializar los valores
+	 * @throws Exception
+	 */
 	public void setUp() throws Exception {
 
 		bd = new CreateBD("PizzeriaPrueba.bd");
@@ -26,12 +35,20 @@ public class AdministradorBDTest {
 	}
 
 	@After
+	/**
+	 * esto es para cerrar la conexion despues de testear
+	 * @throws Exception
+	 */
 	public void tearDown() throws Exception {
 		bd.closeLink();
 
 	}
 
 	@Test
+	/**
+	 * este es el test en caso de que no se cree la tabla
+	 * @throws SQLException
+	 */
 	public void testFail() throws SQLException {
 
 		logica.datos.AdministradorBD.insertAdministrador(bd.getConn(), "12345678G", 200, 5,"anetxu", "anebo9");
@@ -41,6 +58,10 @@ public class AdministradorBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el test de insertar los clientes
+	 * @throws SQLException
+	 */
 	public void testInsert() throws SQLException {
 
 		logica.datos.AdministradorBD.createAdministradorTable(bd.getConn());
@@ -67,6 +88,10 @@ public class AdministradorBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el test de seleccionar los clientes
+	 * @throws SQLException
+	 */
 	public void select() throws SQLException {
 
 		logica.datos.AdministradorBD.createAdministradorTable(bd.getConn());

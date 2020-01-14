@@ -7,11 +7,20 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * esta es la clase para testear el mergesort
+ * @author Ane Y aitor
+ *
+ */
 public class BusquedaClientePizzasyNumVecesTest {
 
 	private ArrayList<Integer>Input=new ArrayList<>();
 	private ArrayList<String>pizzas=new ArrayList<>();
 	@Before
+	/**
+	 * este es el metodo para inicializar los valores
+	 * @throws Exception
+	 */
 	public void setUp() throws Exception {
 		
 		//array input
@@ -30,6 +39,9 @@ public class BusquedaClientePizzasyNumVecesTest {
 	}
 
 	@Test
+	/**
+	 * este es el metodo para testear el merge
+	 */
 	public void testMerge() {
 		ArrayList<Integer>numero=logica.presentacion.BusquedaClientePizzasyNumVeces.mergeSort(Input, pizzas);
 		

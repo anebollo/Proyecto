@@ -3,9 +3,17 @@ package hilos;
 import logica.negocios.Cliente;
 import logica.negocios.Pizzeria;
 
+/**
+ * 
+ * @author Ane y Aitor
+ *
+ */
 public class ProveedorClientes extends Thread {
 
 	@Override
+	/**
+	 * este metodo sirve para indicar lo que hara el proveedor clientes cuando se ejecute
+	 */
 	public void run() {
 
 		while (Pizzeria.getInstancia().isEnServicio()) {
@@ -27,6 +35,10 @@ public class ProveedorClientes extends Thread {
 		}
 	}
 
+	/**
+	 * este metodo sirve para crear dnis aleatoriamente
+	 * @return dni
+	 */
 	public String crearDni() {
 		char[] elementos = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q',
 				'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };

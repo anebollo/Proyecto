@@ -14,11 +14,20 @@ import junit.framework.Assert;
 import logica.datos.CreateBD;
 import logica.negocios.Cliente;
 
+/**
+ * esta es la clase para testear todo lo de la BD de los clientes
+ * @author Alumno
+ *
+ */
 public class ClienteBDTest {
 
 	private CreateBD bd;
 
 	@Before
+	/**
+	 * este es el metodo para inicializar los valores
+	 * @throws Exception
+	 */
 	public void setUp() throws Exception {
 
 		bd = new CreateBD("PizzeriaPrueba.db");
@@ -27,12 +36,20 @@ public class ClienteBDTest {
 	}
 
 	@After
+	/**
+	 * este es el metodo para cerrar la conexion al finalziar de testear
+	 * @throws Exception
+	 */
 	public void tearDown() throws Exception {
 		bd.closeLink();
 
 	}
 
 	@Test
+	/**
+	 * este es el metodo para ver si al tabla no se crea
+	 * @throws SQLException
+	 */
 	public void testFail() throws SQLException {
 
 		logica.datos.ClienteBD.createClienteTable(bd.getConn());
@@ -40,6 +57,9 @@ public class ClienteBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el metodo para testear el insert de clientes
+	 */
 	public void testInsert() {
 
 		logica.datos.ClienteBD.createClienteTable(bd.getConn());
@@ -99,6 +119,9 @@ public class ClienteBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el metodo para seleccionar el select de los clientes
+	 */
 	public void select() {
 
 		logica.datos.ClienteBD.createClienteTable(bd.getConn());
@@ -157,6 +180,9 @@ public class ClienteBDTest {
 	}
 
 	@Test
+	/**
+	 * este es el metodo para testear el delete de los clientes
+	 */
 	public void delete() {
 
 		logica.datos.ClienteBD.createClienteTable(bd.getConn());
