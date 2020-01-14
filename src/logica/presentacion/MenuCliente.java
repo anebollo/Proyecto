@@ -28,7 +28,7 @@ public class MenuCliente extends JFrame {
 
 	private JPanel contentPane;
 
-	private ArrayList<Pizza> pizzas = null;
+	private ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
 	ArrayList<Cliente>clientesBD=new ArrayList<Cliente>();
 	private PantallaInicial papi;
 
@@ -39,9 +39,9 @@ public class MenuCliente extends JFrame {
 	public MenuCliente(ArrayList<Cliente>clientes,PantallaInicial padre) {
 		setResizable(false);
 		
-		papi=padre;
-		
+		this.papi=padre;
 		this.clientesBD=clientes;
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 938, 668);
 		contentPane = new JPanel();
@@ -308,8 +308,9 @@ public class MenuCliente extends JFrame {
 			
 				// AQUI FALTA ABRIR LA PANTALLA FACTURA HABIENDO CREADO LAS PIZZAS COMPRADAS
 				
-				PantallaFactura mostrar=new PantallaFactura(totalPrecio,pizzas,clientesBD);
+				PantallaFactura mostrar=new PantallaFactura(papi,totalPrecio,pizzas,clientesBD);
 				mostrar.setVisible(true);
+				MenuCliente.this.dispose();
 				}
 
 			}

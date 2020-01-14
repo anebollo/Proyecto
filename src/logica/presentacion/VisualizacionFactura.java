@@ -90,6 +90,7 @@ public class VisualizacionFactura extends JFrame {
 		contentPane.add(lblFecha);
 
 		JTextPane textPane = new JTextPane();
+		textPane.setFont(new Font("Tahoma", Font.BOLD, 16));
 		textPane.setBounds(48, 103, 421, 222);
 		//contentPane.add(textPane);
 		
@@ -104,11 +105,11 @@ public class VisualizacionFactura extends JFrame {
 		if(opcion==1) {
 			
 			//todas las facturas de esa fecha
-		String contenido = null;
+		String contenido = "";
 
 		for (Factura a : seleccionado) {
 
-			contenido = a.getNumFac() + " ->" + a.getCoste() + "\n";
+			contenido = "NUMERO FACTURA: "+a.getNumFac() + " --> COSTE: " + a.getCoste() + "€\n";
 		}
 		textPane.setText(contenido);
 		}
@@ -120,7 +121,7 @@ public class VisualizacionFactura extends JFrame {
 
 			for (Repartidor a : seleccionadoR) {
 
-				contenido += "- "+ a.getDni() + " , " + (formatter.format(a.getCadCarne()));
+				contenido += "- DNI: "+ a.getDni() + " , FECHA: " + (formatter.format(a.getCadCarne()));
 			}
 			textPane.setText(contenido);
 			

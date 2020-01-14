@@ -75,6 +75,7 @@ public class CreateBD {
 			numVeces1.add(3);
 			numVeces1.add(2);
 			ClienteBD.insertCliente(this.conn,"31425345G","674782688", pizzas1, numVeces1);
+			
 
 			// insertar datos en la tabla administrador
 			AdministradorBD.insertAdministrador(this.conn,"73036696N", 3000, 7, "anebo", "deusto9");
@@ -101,6 +102,7 @@ public class CreateBD {
 			pizzas3.add("Jamon y queso");
 			pizzas3.add("Barbacoa");
 			FacturaBD.insertFactura(this.conn,2, "07-11-2019", 15, pizzas3);
+			
 			
 		
 //			// Last step - Close connection

@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 import java.awt.Font;
 
@@ -56,17 +57,19 @@ public class PantallaFactura extends JFrame {
 	private static int countC = 0;
 	private static int countH = 0;
 	private static int countBo = 0;
+	private PantallaInicial papi;
 
 	/**
 	 * Create the frame factura, en la que una vez finalizado la compra, se le
 	 * muestra al cliente la factura de su compra, con su precio, pizzas
 	 * compradas...
 	 */
-	public PantallaFactura(int total, ArrayList<Pizza> compra, ArrayList<Cliente> clientes) {
+	public PantallaFactura(PantallaInicial padre,int total, ArrayList<Pizza> compra, ArrayList<Cliente> clientes) {
 		setResizable(false);
 
 		this.clientesBD = clientes;
 		this.compraCliente = compra;
+		this.papi=padre;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 599, 699);
@@ -148,6 +151,7 @@ public class PantallaFactura extends JFrame {
 		// pedir que introduzca eL TELEFONO
 
 		JTextPane textPane = new JTextPane();
+		textPane.setFont(new Font("Tahoma", Font.BOLD, 16));
 		textPane.setBounds(208, 346, 327, 158);
 
 		// PONER EL SCROLLPANE EN UN JLIST
@@ -160,7 +164,7 @@ public class PantallaFactura extends JFrame {
 		String contenido = "";
 		for (int i = 0; i < compra.size(); i++) {
 
-			contenido += "- " + compra.get(i).getNombre() + ", tamaño: " + compra.get(i).getTamaño() + " ---> "
+			contenido += "- " + compra.get(i).getNombre() + ", tamaño: " + compra.get(i).getTamaño() + " --> "
 					+ compra.get(i).getPrecio() + "€\n";
 
 		}
@@ -173,6 +177,7 @@ public class PantallaFactura extends JFrame {
 				// CERRAR VENTANA
 
 				PantallaFactura.this.dispose();
+				papi.setVisible(true);
 			}
 		});
 		btnCancelar.setBounds(103, 576, 115, 29);
@@ -190,15 +195,26 @@ public class PantallaFactura extends JFrame {
 				String tlf = null;
 				dni = txtDNI.getText();
 				tlf = txtTlf.getText();
+				
 				dniComprador = dni;
+				
+				boolean rellenado=false;
 
 				if (dni != null && tlf != null) {
+					rellenado=true;
+				}
+					
+				if(rellenado==false) {
+					JOptionPane.showMessageDialog(PantallaFactura.this, "DNI o telefono sin rellenar");
+				}
+				else if(rellenado==true) {
 
 					desglosar();
 
 					for (Cliente a : clientesBD) {
+						
 
-						if (a.getDNI().equals(dniComprador)) {
+						if (a.getTelefono().equals(dniComprador)) {
 
 							ArrayList<String> pizzasAntes = a.getNombrePizzas();
 							ArrayList<Integer> numAntes = a.getNumVeces();
@@ -208,6 +224,7 @@ public class PantallaFactura extends JFrame {
 							mybd1.closeLink();
 
 							juntar(pizzasAntes, numAntes);
+							break;
 
 						}
 
@@ -217,18 +234,17 @@ public class PantallaFactura extends JFrame {
 					CreateBD mybd = new CreateBD("Pizzeria.db");
 					mybd.createLink();
 					logica.datos.ClienteBD.insertCliente(mybd.getConn(), dni, tlf, nombrePizzas, numVeces);
-					mybd.closeLink();
 
 					// INTRODUCIR EN LA BD LA NUEVA FACTURA
 
-					CreateBD mybd2 = new CreateBD("Pizzeria.db");
-					mybd2.createLink();
-					logica.datos.FacturaBD.insertFactura(mybd2.getConn(), numero, fechaFac, total, nombrePizzas);
-					mybd2.closeLink();
+					logica.datos.FacturaBD.insertFactura(mybd.getConn(), numero, fechaFac, total, nombrePizzas);
+					mybd.closeLink();
 
 					PantallaFactura.this.dispose();
 					ConfirmacionPedido nueva = new ConfirmacionPedido(total);
 					nueva.setVisible(true);
+					
+					
 
 				}
 

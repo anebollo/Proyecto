@@ -191,6 +191,8 @@ public class NuevoRepartidor extends JFrame {
 						logica.datos.RepartidorBD.insertRepartidor(mybd.getConn(), dni, sueldo, horasDia, fechaString);
 						mybd.closeLink();
 						NuevoRepartidor.this.dispose();
+						padre.setVisible(true);
+						
 					}
 					
 				}
@@ -235,9 +237,12 @@ public class NuevoRepartidor extends JFrame {
 						
 						CreateBD mybd=new CreateBD("Pizzeria.db");
 						mybd.createLink();
-						logica.datos.RepartidorBD.insertRepartidor(mybd.getConn(), dni, sueldo, horasDia, fechaString);
+						logica.datos.RepartidorBD.updateRepartidor(mybd.getConn(), dni, sueldo, horasDia, fechaString);
 						mybd.closeLink();
 						NuevoRepartidor.this.dispose();
+						padre.setVisible(true);
+						
+						
 						
 					}
 					

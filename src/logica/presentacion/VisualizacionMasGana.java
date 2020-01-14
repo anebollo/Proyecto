@@ -44,12 +44,12 @@ public class VisualizacionMasGana extends JFrame {
 		contentPane.setLayout(null);
 
 		JTextPane textPane = new JTextPane();
-		textPane.setFont(new Font("Verdana", Font.BOLD, 38));
+		textPane.setFont(new Font("Verdana", Font.BOLD, 30));
 		textPane.setBounds(66, 149, 434, 109);
 		contentPane.add(textPane);
 		// añadir contenido al textPane
 		ArrayList<String> mes=ordenar();
-		String contenido=null;
+		String contenido="";
 		for(int i=0;i<mes.size();i++) {
 			contenido=mes.get(i)+"\n";
 		}
@@ -125,7 +125,7 @@ public class VisualizacionMasGana extends JFrame {
 		int mesMas = numMeses.stream().mapToInt(i -> i).max().getAsInt();
 		int position = 0;
 		ArrayList<Integer> masDeUno = new ArrayList<Integer>();
-		ArrayList<String> masDeUnMes = new ArrayList();
+		ArrayList<String> masDeUnMes = new ArrayList<String>();
 		String mes = null;
 		for (int i = 0; i < numMeses.size(); i++) {
 
@@ -141,28 +141,40 @@ public class VisualizacionMasGana extends JFrame {
 
 		if (masDeUno.get(i) == 1) {
 			mes = "ENERO";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 2) {
 			mes = "FEBRERO";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 3) {
 			mes = "MARZO";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 4) {
 			mes = "ABRIL";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 5) {
 			mes = "MAYO";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 6) {
 			mes = "JUNIO";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 7) {
 			mes = "JULIO";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 8) {
 			mes = "AGOSTO";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 9) {
 			mes = "SEPTIEMBRE";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 10) {
 			mes = "0CTUBRE";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 11) {
 			mes = "NOVIEMBRE";
+			masDeUnMes.add(mes);
 		} else if (masDeUno.get(i) == 12) {
 			mes = "DICIEMBRE";
+			masDeUnMes.add(mes);
 		}
 		
 		}

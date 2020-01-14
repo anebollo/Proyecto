@@ -39,7 +39,7 @@ public class VisualizacionCliente extends JFrame {
 	 * el numero de veces cada una
 	 */
 
-	public VisualizacionCliente(String contenido, String dni, MenuAdmi papi, int option) {
+	public VisualizacionCliente(String dni, String contenido, MenuAdmi papi, int option) {
 
 		this.padre = papi;
 		this.contenidoCliente = contenido;

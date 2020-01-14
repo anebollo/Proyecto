@@ -173,5 +173,21 @@ public class ClienteBD {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+//	public static void delete2(Connection conn, String pizzas) {
+//		String sql = "DELETE FROM cliente WHERE nombrePizzas = ?";
+//
+//		try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+//
+//			// set the corresponding param
+//			pstmt.setString(1, pizzas);
+//
+//			// execute the delete statement
+//			pstmt.executeUpdate();
+//
+//		} catch (SQLException e) {
+//			System.out.println(e.getMessage());
+//		}
+//	}
 
 }

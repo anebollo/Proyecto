@@ -70,7 +70,7 @@ public class BuscarFactura extends JFrame {
 		cargarVentana();
 	}
 
-	// buscar num facturas por dni repartidor
+	// buscar repartiores por fecha cad 
 	/**
 	 * @wbp.parser.constructor
 	 */
@@ -118,7 +118,7 @@ public class BuscarFactura extends JFrame {
 							.filter(w -> (formatter.format(w.getFecha())).equals(fecha))
 							.collect(Collectors.toCollection(() -> new ArrayList<Factura>()));
 
-					if (seleccion.isEmpty()) {
+					if (!seleccion.isEmpty()) {
 
 						BuscarFactura.this.dispose();
 						VisualizacionFactura nuevo = new VisualizacionFactura(BuscarFactura.this, fecha, seleccion);
@@ -150,7 +150,7 @@ public class BuscarFactura extends JFrame {
 							seleccion.add(a);
 						}
 					}
-					if (seleccion.isEmpty()) {
+					if (!seleccion.isEmpty()) {
 
 						BuscarFactura.this.dispose();
 						VisualizacionFactura nuevo = new VisualizacionFactura(BuscarFactura.this, seleccion, fecha);

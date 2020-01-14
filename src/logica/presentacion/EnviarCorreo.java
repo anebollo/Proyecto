@@ -38,13 +38,11 @@ public class EnviarCorreo extends JFrame {
 	private JLabel lblEmisor;
 	private JLabel lblReceptor;
 	private JLabel lblCuerpo;
-	
 
 	/**
 	 * Create the frame.
 	 */
 	public EnviarCorreo(MenuAdmi padre, String user, String passW) {
-
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 574, 483);
@@ -71,9 +69,8 @@ public class EnviarCorreo extends JFrame {
 
 		txtCuerpo = new JTextField();
 		txtCuerpo.setBounds(132, 215, 290, 113);
-		//contentPane.add(txtCuerpo);
+		// contentPane.add(txtCuerpo);
 		txtCuerpo.setColumns(10);
-	
 
 		// PONER EL SCROLLPANE EN UN txt
 		JScrollPane scroll = new JScrollPane();
@@ -93,23 +90,21 @@ public class EnviarCorreo extends JFrame {
 
 				if (remi != null || dest != null || cuerpo != null) {
 
-					JOptionPane.showMessageDialog(null, "Uno de los campos esta vacio");
+					if (EnviarCorreo.enviarGmail(user, passW, dest, cuerpo) == true) {
 
-				} else {
-					
-					if(EnviarCorreo.enviarGmail(user, passW, dest, cuerpo)==true) {
-						
 						JOptionPane.showMessageDialog(null, "enviado");
-						int opcion=JOptionPane.showConfirmDialog(contentPane, "Quieres volver al menu?");
-						if(opcion==0) {
-							
+						int opcion = JOptionPane.showConfirmDialog(contentPane, "Quieres volver al menu?");
+						if (opcion == 0) {
+
 							padre.setVisible(true);
 							EnviarCorreo.this.dispose();
 						}
-					}
-					else {
+					} else {
 						JOptionPane.showMessageDialog(null, "No se ha podido enviar");
 					}
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Uno de los campos esta vacio");
 
 				}
 
@@ -130,22 +125,22 @@ public class EnviarCorreo extends JFrame {
 		});
 		btnCancel.setBounds(42, 366, 115, 29);
 		contentPane.add(btnCancel);
-		
+
 		JLabel lblFoto = new JLabel("New label");
 		lblFoto.setIcon(new ImageIcon("imagenes/correo.jpg"));
 		lblFoto.setBounds(-27, -35, 662, 540);
 		contentPane.add(lblFoto);
-		
+
 		lblEmisor = new JLabel("Emisor");
 		lblEmisor.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblEmisor.setBounds(27, 118, 69, 20);
 		contentPane.add(lblEmisor);
-		
+
 		lblReceptor = new JLabel("Receptor");
 		lblReceptor.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblReceptor.setBounds(27, 171, 91, 20);
 		contentPane.add(lblReceptor);
-		
+
 		lblCuerpo = new JLabel("Cuerpo");
 		lblCuerpo.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblCuerpo.setBounds(27, 215, 69, 20);

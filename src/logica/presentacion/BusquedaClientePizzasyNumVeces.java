@@ -39,10 +39,11 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 
 	public ArrayList<Cliente> getClientes() {
 		return clientes;
+		
 	}
 
-	public void setClientes(ArrayList<Cliente> clientes) {
-		this.clientes = clientes;
+	public void setClientes(ArrayList<Cliente> clientesS) {
+		this.clientes = clientesS;
 	}
 	
 	
@@ -52,10 +53,14 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 	 * administrador pueda buscar segun el dni del cliente las pizzas que ha
 	 * comprado y el numero de vez cada una de ellas.
 	 */
-	public BusquedaClientePizzasyNumVeces(MenuAdmi padre,ArrayList<Cliente> clientes) {
+	public BusquedaClientePizzasyNumVeces(MenuAdmi padre,ArrayList<Cliente> clientesS) {
 		setResizable(false);
 
-		this.clientes = clientes;
+		this.clientes = clientesS;
+		
+		for(int i=0;i<this.clientes.size();i++) {
+			System.out.println(clientes.get(i).getTelefono()+"\n");
+		}
 		this.papi=padre;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -100,13 +105,11 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 					numVeces = mergeSort(numVeces, pizzas);
 
 					// abrir otra ventana mostrando la info
-					String contenido = null;
+					String contenido = "";
 					for (int i = 0; i < pizzas.size(); i++) {
-						for (int j = 0; j < numVeces.size(); j++) {
 
-							contenido += "- " + pizzas.get(i) + " " + numVeces.get(j) + " veces\n";
-
-						}
+							contenido += "- " + pizzas.get(i) + " " + numVeces.get(i) + " veces\n";
+						
 					}
 					BusquedaClientePizzasyNumVeces.this.dispose();
 					VisualizacionCliente nueva = new VisualizacionCliente(dni, contenido, papi,1);
@@ -161,9 +164,11 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 
 		for (Cliente a : clientes) {
 
-			if (a.getDNI().equals(dni)) {
+			if (a.getTelefono().equals(dni)) {
 				existencia = true;
 				elegido = a;
+				System.out.println("a");
+				break;
 
 			}
 

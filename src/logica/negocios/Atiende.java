@@ -2,6 +2,7 @@ package logica.negocios;
 
 import java.util.ArrayList;
 
+import Utilidades.CalculatorGenerico;
 import intefaces.ICalculator;
 
 /**

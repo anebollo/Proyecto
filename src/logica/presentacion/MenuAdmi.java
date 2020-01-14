@@ -183,8 +183,9 @@ public class MenuAdmi extends JFrame {
 					int num=2;
 					String dato="BUSQUEDA CADUCADOS";
 					BuscarFactura busqueda=new BuscarFactura(repartidoresBD,dato,MenuAdmi.this,num);
-					busqueda.setVisible(true);
 					MenuAdmi.this.dispose();
+					busqueda.setVisible(true);
+					
 					
 
 				} else if (opcion.equals("Cual es el mes que mas gana la pizzeria")) {

@@ -8,6 +8,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+
+import Utilidades.CalculatorGenerico;
+
 import javax.swing.JLabel;
 import javax.swing.JList;
 
@@ -16,7 +19,6 @@ import java.util.ArrayList;
 
 import javax.swing.JTextPane;
 
-import logica.negocios.CalculatorGenerico;
 import logica.negocios.Repartidor;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
