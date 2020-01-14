@@ -65,6 +65,8 @@ public class CreateBD {
 			numVeces.add(2);
 			numVeces.add(3);
 			ClienteBD.insertCliente(this.conn,"12345679A","943429440", pizzas, numVeces);
+//			ClienteBD.delete(this.conn, "73036696N");
+		//	ClienteBD.delete2(this.conn, "Barbacoa");
 
 			ArrayList<String> pizzas1 = new ArrayList<String>();
 			pizzas1.add("Jamon y queso");
@@ -102,6 +104,7 @@ public class CreateBD {
 			pizzas3.add("Jamon y queso");
 			pizzas3.add("Barbacoa");
 			FacturaBD.insertFactura(this.conn,2, "07-11-2019", 15, pizzas3);
+			//FacturaBD.delete(this.conn, 264);
 			
 			
 		

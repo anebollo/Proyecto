@@ -64,12 +64,12 @@ public class PantallaFactura extends JFrame {
 	 * muestra al cliente la factura de su compra, con su precio, pizzas
 	 * compradas...
 	 */
-	public PantallaFactura(PantallaInicial padre,int total, ArrayList<Pizza> compra, ArrayList<Cliente> clientes) {
+	public PantallaFactura(PantallaInicial padre, int total, ArrayList<Pizza> compra, ArrayList<Cliente> clientes) {
 		setResizable(false);
 
 		this.clientesBD = clientes;
 		this.compraCliente = compra;
-		this.papi=padre;
+		this.papi = padre;
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 599, 699);
@@ -195,24 +195,25 @@ public class PantallaFactura extends JFrame {
 				String tlf = null;
 				dni = txtDNI.getText();
 				tlf = txtTlf.getText();
-				
+
 				dniComprador = dni;
-				
-				boolean rellenado=false;
+
+				boolean rellenado = false;
 
 				if (dni != null && tlf != null) {
-					rellenado=true;
+					rellenado = true;
+
 				}
-					
-				if(rellenado==false) {
+
+				if (rellenado == false) {
 					JOptionPane.showMessageDialog(PantallaFactura.this, "DNI o telefono sin rellenar");
 				}
-				else if(rellenado==true) {
+
+				else if (rellenado == true) {
 
 					desglosar();
 
 					for (Cliente a : clientesBD) {
-						
 
 						if (a.getDNI().equals(dniComprador)) {
 
@@ -243,8 +244,6 @@ public class PantallaFactura extends JFrame {
 					PantallaFactura.this.dispose();
 					ConfirmacionPedido nueva = new ConfirmacionPedido(total);
 					nueva.setVisible(true);
-					
-					
 
 				}
 
@@ -255,8 +254,7 @@ public class PantallaFactura extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblNewLabel.setIcon(new ImageIcon(
-				"imagenes/AA.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("imagenes/AA.jpg"));
 		lblNewLabel.setBounds(392, 44, 157, 125);
 		contentPane.add(lblNewLabel);
 
@@ -311,8 +309,6 @@ public class PantallaFactura extends JFrame {
 
 		}
 
-		
-
 	}
 
 	/**
@@ -331,66 +327,80 @@ public class PantallaFactura extends JFrame {
 			// como hacer que no se repitan los nombre y contar en num de veces
 			if (pizzasAntes.get(i).equals("Jamon y queso")) {
 
-				countJQ += numAntes.get(i);
+				if (countJQ == 0) {
+					nombrePizzas.add("Jamon y queso");
+					countJQ += numAntes.get(i);
+					numVeces.add(countJQ);
+				} else {
+
+					countJQ += numAntes.get(i);
+					numVeces.set(i, countJQ);
+				}
+
 			}
 			if (pizzasAntes.get(i).equals("4 quesos")) {
 
-				count4Q += numAntes.get(i);
+				if (count4Q == 0) {
+					nombrePizzas.add("4 quesos");
+					count4Q += numAntes.get(i);
+					numVeces.add(count4Q);
+				} else {
+
+					count4Q += numAntes.get(i);
+					numVeces.set(i, count4Q);
+				}
 			}
 			if (pizzasAntes.get(i).equals("Barbacoa")) {
 
-				countB += numAntes.get(i);
+				if (countB == 0) {
+					nombrePizzas.add("Barbacoa");
+					countB += numAntes.get(i);
+					numVeces.add(countB);
+				} else {
+
+					countB += numAntes.get(i);
+					numVeces.set(i, countB);
+				}
 			}
 
 			if (pizzasAntes.get(i).equals("Carbonara")) {
 
-				countC += numAntes.get(i);
+				if (countC == 0) {
+					nombrePizzas.add("Carbonara");
+					countC += numAntes.get(i);
+					numVeces.add(countC);
+				} else {
+
+					countC += numAntes.get(i);
+					numVeces.set(i, countC);
+				}
 			}
 
 			if (pizzasAntes.get(i).equals("Hawaiiana")) {
 
-				countH += numAntes.get(i);
+				if (countH == 0) {
+					nombrePizzas.add("Hawaiiana");
+					countH += numAntes.get(i);
+					numVeces.add(countH);
+				} else {
+
+					countH += numAntes.get(i);
+					numVeces.set(i, countH);
+				}
 			}
 
 			if (pizzasAntes.get(i).equals("Boloñesa")) {
 
-				countBo += numAntes.get(i);
+				if (countJQ == 0) {
+					nombrePizzas.add("Boloñesa");
+					countBo += numAntes.get(i);
+					numVeces.add(countBo);
+				} else {
+
+					countBo += numAntes.get(i);
+					numVeces.set(i, countBo);
+				}
 			}
-
-		}
-
-		if (countJQ != 0) {
-			nombrePizzas.add("Jamon y queso");
-			numVeces.add(countJQ);
-
-		}
-		if (count4Q != 0) {
-			nombrePizzas.add("4 quesos");
-			numVeces.add(count4Q);
-
-		}
-
-		if (countB != 0) {
-			nombrePizzas.add("Barbacoa");
-			numVeces.add(countB);
-
-		}
-
-		if (countC != 0) {
-			nombrePizzas.add("Carbonara");
-			numVeces.add(countC);
-
-		}
-
-		if (countH != 0) {
-			nombrePizzas.add("Hawaiiana");
-			numVeces.add(countH);
-
-		}
-
-		if (countBo != 0) {
-			nombrePizzas.add("Boloñesa");
-			numVeces.add(countBo);
 
 		}
 

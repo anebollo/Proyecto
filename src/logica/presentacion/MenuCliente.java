@@ -9,6 +9,8 @@ import logica.negocios.Cliente;
 import logica.negocios.Pizza;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -298,12 +300,13 @@ public class MenuCliente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				// ACCION COMPRAR
-				if(pizzas!=null) {
+				if(!pizzas.isEmpty()) {
 					
 				int totalPrecio = 0;
 				for(int i=0;i<pizzas.size();i++) {
 					
 					totalPrecio+=pizzas.get(i).getPrecio();
+				
 				}
 			
 				// AQUI FALTA ABRIR LA PANTALLA FACTURA HABIENDO CREADO LAS PIZZAS COMPRADAS
@@ -311,6 +314,9 @@ public class MenuCliente extends JFrame {
 				PantallaFactura mostrar=new PantallaFactura(papi,totalPrecio,pizzas,clientesBD);
 				mostrar.setVisible(true);
 				MenuCliente.this.dispose();
+				}
+				else {
+					JOptionPane.showMessageDialog(MenuCliente.this, "No has seleccionado nada");
 				}
 
 			}
