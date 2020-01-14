@@ -214,7 +214,7 @@ public class PantallaFactura extends JFrame {
 					for (Cliente a : clientesBD) {
 						
 
-						if (a.getTelefono().equals(dniComprador)) {
+						if (a.getDNI().equals(dniComprador)) {
 
 							ArrayList<String> pizzasAntes = a.getNombrePizzas();
 							ArrayList<Integer> numAntes = a.getNumVeces();

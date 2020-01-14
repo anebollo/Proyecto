@@ -29,10 +29,10 @@ public class Cliente {
 	 * @param numVeces
 	 *            que pide el Cliente
 	 */
-	public Cliente(String telefono, String dNI, ArrayList<String> nombrePizzas, ArrayList<Integer> numVeces) {
+	public Cliente(String dni, String telefono, ArrayList<String> nombrePizzas, ArrayList<Integer> numVeces) {
 		super();
 		this.telefono = telefono;
-		DNI = dNI;
+		this.DNI = dni;
 		this.nombrePizzas = nombrePizzas;
 		this.numVeces = numVeces;
 	}

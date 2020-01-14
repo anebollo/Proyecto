@@ -159,10 +159,10 @@ public class BusquedaClientePizzasyNumVeces extends JFrame {
 
 		for (Cliente a : clientes) {
 
-			if (a.getTelefono().equals(dni)) {
+		
+			if (a.getDNI().equals(dni)) {
 				existencia = true;
 				elegido = a;
-				System.out.println("a");
 				break;
 
 			}
