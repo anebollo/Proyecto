@@ -1,6 +1,7 @@
 package logica.presentacion;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import exception.UsuarioNoExiste;
 import logica.negocios.Factura;
 import logica.negocios.Repartidor;
+
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -94,7 +96,7 @@ public class BuscarFactura extends JFrame {
 
 		lblBusquedaFactura.setForeground(Color.WHITE);
 		lblBusquedaFactura.setFont(new Font("Tahoma", Font.BOLD, 21));
-		lblBusquedaFactura.setBounds(15, 16, 242, 57);
+		lblBusquedaFactura.setBounds(15, 16, 434, 57);
 		contentPane.add(lblBusquedaFactura);
 
 		txtFecha = new JTextField();
@@ -124,8 +126,7 @@ public class BuscarFactura extends JFrame {
 						nuevo.setVisible(true);
 
 					} else {
-						UsuarioNoExiste e1 = null;
-						JOptionPane.showMessageDialog(BuscarFactura.this, e1.getMessage());
+						JOptionPane.showMessageDialog(BuscarFactura.this, "No hay facturas con esa fecha");
 
 					}
 				}
@@ -187,10 +188,17 @@ public class BuscarFactura extends JFrame {
 		btnSalir.setBounds(470, 329, 115, 29);
 		contentPane.add(btnSalir);
 
+		JLabel lblDdmmyyyy = new JLabel("dd-MM-yyyy");
+		lblDdmmyyyy.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblDdmmyyyy.setBounds(246, 123, 115, 20);
+		contentPane.add(lblDdmmyyyy);
+		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon("imagenes/BuscarFactura.jpg"));
-		lblNewLabel.setBounds(0, 0, 656, 401);
+		lblNewLabel.setBounds(0, 0, 638, 387);
 		contentPane.add(lblNewLabel);
+		
+		
 	}
 
 	public static Date variarFecha(Date fecha, int campo, int valor) {

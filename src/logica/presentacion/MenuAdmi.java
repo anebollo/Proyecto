@@ -83,7 +83,7 @@ public class MenuAdmi extends JFrame {
 		contentPane.setLayout(null);
 
 		JComboBox cbxOpcion = new JComboBox();
-		cbxOpcion.setModel(new DefaultComboBoxModel(new String[] {"Dar de alta Repartidor", "Dar de baja Repartidor", "Modificar Repartidor", "Pizza y numero de veces pedidas de un cliente especifico", "Pizza mas pedida", "Buscar facturas por fecha determinada", "Numero de repartidores y el coste que emplea en ellos", "Repartidores que se les caduca el carnet EN 3 meses de una fecha ", "Cual es el mes que mas gana la pizzeria", "Enviar correo", "Ver las maquinas automaticas"}));
+		cbxOpcion.setModel(new DefaultComboBoxModel(new String[] {"Dar de alta Repartidor", "Dar de baja Repartidor", "Modificar Repartidor", "Pizza y numero de veces pedidas de un cliente especifico", "Pizza mas pedida", "Buscar facturas por fecha determinada", "Numero de repartidores y el coste que emplea en ellos", "Repartidores que se les caduca el carnet en el intervalo de 3 meses de una fecha ", "Cual es el mes que mas gana la pizzeria", "Ver las maquinas automaticas"}));
 		cbxOpcion.setBounds(62, 152, 431, 44);
 		contentPane.add(cbxOpcion);
 
@@ -178,7 +178,7 @@ public class MenuAdmi extends JFrame {
 					abrir.setVisible(true);
 					MenuAdmi.this.dispose();
 
-				} else if (opcion.equals("Repartidores que se les caduca el carnet EN 3 meses de una fecha ")) {
+				} else if (opcion.equals("Repartidores que se les caduca el carnet en el intervalo de 3 meses de una fecha")) {
 					
 					int num=2;
 					String dato="BUSQUEDA CADUCADOS";
@@ -195,12 +195,6 @@ public class MenuAdmi extends JFrame {
 					abrir.setVisible(true);
 					MenuAdmi.this.dispose();
 
-				}
-				else if(opcion.equals("Enviar correo")) {
-					
-					EnviarCorreo abrir=new EnviarCorreo(MenuAdmi.this,user,passW);
-					abrir.setVisible(true);
-					MenuAdmi.this.dispose();
 				}
 				else if(opcion.equals("Ver las maquinas automaticas")) {
 					
